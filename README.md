@@ -1,2 +1,2 @@
 # container-restic
-Container to backup containerized applications
+Container to backup containerized applications with restic.
