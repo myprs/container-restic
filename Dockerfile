@@ -22,16 +22,16 @@ WORKDIR /backup/RUN
 #
 
 
-CMD mkdir /opt/restic
+CMD mkdir -p /opt/restic/bin
 
 # Install local restic version to make sure we have "restic self-update" available.
 # alpine apk version does not provide self-update!
-COPY bin/restic /opt/restic/.
+COPY bin/restic /opt/restic/bin/restic
 
 ## update erstic
-CMD cd /opt/restic ; ./restic self-update
+CMD cd /opt/restic/bin ; ./restic self-update
 
-ENV PATH=$PATH:/opt/restic
+ENV PATH=$PATH:/opt/restic/bin
 
 
 
